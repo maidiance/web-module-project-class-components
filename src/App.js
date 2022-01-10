@@ -48,12 +48,11 @@ class App extends React.Component {
       id: Date.now(),
       completed: false,
     };
-    console.log('newTodo', newTodo)
     this.setState({
       ...this.state,
       todo:[...this.state.todo, newTodo],
     })
-    console.log('handleAddTodo', this.state);
+    
   }
 
   // Toggle Completed
@@ -79,9 +78,11 @@ class App extends React.Component {
         <TodoList
           todo={this.state.todo}
           handleToggleTodo={this.handleToggleTodo} />
+          
         <TodoForm
           handleAddTodo={this.handleAddTodo}
           handleClearCompleted={this.handleClearCompleted} />
+          
       </div>
     );
   }
