@@ -50,6 +50,7 @@ class App extends React.Component {
       ...this.state,
       todo:[...this.state.todo, newTodo],
     })
+    console.log(this.state);
   }
 
   // Toggle Completed
@@ -69,11 +70,16 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.state);
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <TodoList todo={this.state.todo} handleToggleTodo={this.handleToggleTodo} />
-        <TodoForm handleAddTodo={this.handleAddTodo} handleClearCompleted={this.handleClearCompleted} />
+        <TodoList
+          todo={this.state.todo}
+          handleToggleTodo={this.handleToggleTodo} />
+        <TodoForm
+          handleAddTodo={this.handleAddTodo}
+          handleClearCompleted={this.handleClearCompleted} />
       </div>
     );
   }
