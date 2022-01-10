@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
+import './style.css';
 
 // initial todo
 const initTodo = [
@@ -29,7 +30,8 @@ class App extends React.Component {
   }
   
   // Clear Completed
-  handleClearCompleted = () => {
+  handleClearCompleted = (e) => {
+    e.preventDefault();
     const newTodo = this.state.todo.filter(item => {
       return !item.completed;
     });
@@ -46,11 +48,12 @@ class App extends React.Component {
       id: Date.now(),
       completed: false,
     };
+    console.log('newTodo', newTodo)
     this.setState({
       ...this.state,
       todo:[...this.state.todo, newTodo],
     })
-    console.log(this.state);
+    console.log('handleAddTodo', this.state);
   }
 
   // Toggle Completed
@@ -70,7 +73,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>

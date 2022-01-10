@@ -6,17 +6,13 @@ class Todo extends React.Component {
     }
 
     handleClick = () => {
-        this.props.handleToggleTodo(this.props.item);
+        this.props.handleToggleTodo(this.props.todo);
     }
 
     render() {
         return (
-            // onClick={handleClick} className={`todo${this.props.todo.completed ? ' completed' : ''}`}
-            <div>
+            <div onClick={this.handleClick} className={`todo${this.props.todo.completed ? ' completed' : ''}`}>
                 <p>{this.props.todo.task}</p>
-                {
-                    console.log('todo', this.props.todo)
-                }
             </div>
         )
     }
