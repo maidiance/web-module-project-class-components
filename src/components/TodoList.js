@@ -8,8 +8,8 @@ class TodoList extends React.Component {
         return(
             <div>
                 {
-                    props.todo.map(item => {
-                        <Todo key={item.id} todo={item} handleToggleTodo={props.handleToggleTodo} />
+                    this.props.todo.map(item => {
+                        <Todo key={item.id} todo={item} handleToggleTodo={this.props.handleToggleTodo} />
                     })
                 }
             </div>

@@ -14,7 +14,7 @@ const initTodo = [
     task: 'Bake Cookies',
     id: 1528817084358,
     completed: false
-  }
+  },
 ];
 
 class App extends React.Component {
@@ -27,6 +27,7 @@ class App extends React.Component {
       todo: initTodo,
     }
   }
+  
   // Clear Completed
   handleClearCompleted = () => {
     const newTodo = this.state.todo.filter(item => {
